@@ -1,0 +1,154 @@
+.order-tracking-body {
+    /* background-color: #eeeeee; */
+    font-family: 'Open Sans', serif
+}
+
+.order-tracking-container {
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+
+.order-tracking-card,
+.order-tracking-card-header,
+.order-tracking-track,
+.order-tracking-track .order-tracking-step,
+.order-tracking-itemside,
+.order-tracking-itemside .order-tracking-aside,
+.order-tracking-btn-warning {
+    border: none;
+}
+
+.order-tracking-card-header {
+    background-color: #fff;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+}
+
+.order-tracking-track {
+    position: relative;
+    background-color: #ddd;
+    height: 7px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 60px;
+    margin-top: 50px
+}
+
+.order-tracking-track .order-tracking-step {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 25%;
+    margin-top: -18px;
+    text-align: center;
+    position: relative
+}
+
+.order-tracking-track .order-tracking-step.active:before {
+    background: #FF5722
+}
+
+.order-tracking-track .order-tracking-step::before {
+    height: 7px;
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    top: 18px
+}
+
+.order-tracking-track .order-tracking-step.active .icon {
+    background: #ee5435;
+    color: #fff
+}
+
+.order-tracking-track .icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    border-radius: 100%;
+    background: #ddd
+}
+
+.order-tracking-track .order-tracking-step.active .text {
+    font-weight: 400;
+    color: #000
+}
+
+.order-tracking-track .text {
+    display: block;
+    margin-top: 7px
+}
+
+.order-tracking-itemside {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%
+}
+
+.order-tracking-itemside .order-tracking-aside {
+    position: relative;
+    -ms-flex-negative: 0;
+    flex-shrink: 0
+}
+
+.order-tracking-img-sm {
+    width: 80px;
+    height: 80px;
+    padding: 7px
+}
+
+ul.row,
+ul.row-sm {
+    list-style: none;
+    padding: 0
+}
+
+.order-tracking-itemside .info {
+    padding-left: 15px;
+    padding-right: 7px
+}
+
+.order-tracking-itemside .title {
+    display: block;
+    margin-bottom: 5px;
+    color: #212529
+}
+
+/* p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #ee5435;
+} */
+
+.order-tracking-btn-warning {
+    color: #ffffff;
+    background-color: #ee5435;
+    border-radius: 1px
+}
+
+.order-tracking-btn-warning:hover {
+    color: #ffffff;
+    background-color: #ff2b00;
+    border-radius: 1px
+}
+
+.track_line{
+    height: 100px;
+    width: 10px;
+    background-color: grey;
+}
+
+.track_circle{
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    background-color: #0d6efd;
+    position: relative;
+    left: -15px;
+}
