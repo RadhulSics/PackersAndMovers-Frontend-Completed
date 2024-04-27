@@ -1,9 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./App.css";
 
 import Footer from "./Components/Footer/Footer";
-import {BrowserRouter,Routes,Route} from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import PackersLogin from "./Components/PackersLogin/PackersLogin";
 import MoversLogin from "./Components/MoversLogin/MoversLogin";
@@ -60,65 +60,111 @@ import AdminDrivers from "./Components/AdminDrivers";
 import AdminViewSinglePacker from "./Components/AdminViewSinglePacker";
 import AdminViewSingleMover from "./Components/AdminViewSingleMover";
 import AdminViewSingleDriver from "./Components/AdminViewSingleDriver";
-
+import MoversViewRating from "./Components/MoversViewRating";
 
 function App() {
   return (
-    <BrowserRouter basename='/packers_and_movers'>
+    <BrowserRouter basename="/packers_and_movers">
       <div className="App">
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/about" element={<AboutCAll/>}/>
-          <Route path="/services" element={<ServiceCall/>}/>
-          <Route path="/packers-login" element={<PackersLogin/>}/>
-          <Route path="/packers-reg" element={<PackersReg/>}/>
-          <Route path="/movers-login" element={<MoversLogin/>}/>
-          <Route path="/driver-login" element={<DriverLogin/>}/>
-          <Route path="/movers-reg" element={<MoversReg/>}/>
-          <Route path="/movers-home" element={<MoversHome/>}/>
-          <Route path="/movers-view-rates" element={<MoversViewRates/>}/>
-          <Route path="/movers-edit-rates/:id" element={<MoversEditRates/>}/>
-          <Route path="/movers-details" element={<MoversAddDetails/>}/>
-          <Route path="/movers-profile" element={<MoversProfile/>}/>
-          <Route path="/movers-editprofile" element={<MoversEditProfile/>}/>
-          <Route path="/movers-forgot-pass" element={<MoversForgotPass/>}/>
-          <Route path="/movers-book-packer/:id" element={<MoversAddLuggage/>}/>
-          <Route path="/movers-payments/:id" element={<MoversPatment/>}/>
-          <Route path="/movers-view-orders" element={<MoversViewOrderReq/>}/>
-          <Route path="/movers-order-req" element={<MoverViewOrderReq/>}/>
-        <Route path="/movers-view-complaints" element={<MoverViewComplaints/>}/>
-         <Route path="/packer_add_review/:id" element={<PackersAddRating/>}/>
-         <Route path="/packer_add_complaint/:id" element={<PackerAddComplaints/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutCAll />} />
+          <Route path="/services" element={<ServiceCall />} />
+          <Route path="/packers-login" element={<PackersLogin />} />
+          <Route path="/packers-reg" element={<PackersReg />} />
+          <Route path="/movers-login" element={<MoversLogin />} />
+          <Route path="/driver-login" element={<DriverLogin />} />
+          <Route path="/movers-reg" element={<MoversReg />} />
+          <Route path="/movers-home" element={<MoversHome />} />
+          <Route path="/movers-view-rates" element={<MoversViewRates />} />
+          <Route path="/movers-edit-rates/:id" element={<MoversEditRates />} />
+          <Route path="/movers-details" element={<MoversAddDetails />} />
+          <Route path="/movers-profile" element={<MoversProfile />} />
+          <Route path="/movers-view-rating" element={<MoversViewRating />} />
+          <Route path="/movers-editprofile" element={<MoversEditProfile />} />
+          <Route path="/movers-forgot-pass" element={<MoversForgotPass />} />
+          <Route
+            path="/movers-book-packer/:id"
+            element={<MoversAddLuggage />}
+          />
+          <Route path="/movers-payments/:id" element={<MoversPatment />} />
+          <Route path="/movers-view-orders" element={<MoversViewOrderReq />} />
+          <Route path="/movers-order-req" element={<MoverViewOrderReq />} />
+          <Route
+            path="/movers-view-complaints"
+            element={<MoverViewComplaints />}
+          />
+          <Route path="/packer_add_review/:id" element={<PackersAddRating />} />
+          <Route
+            path="/packer_add_complaint/:id"
+            element={<PackerAddComplaints />}
+          />
           {/* <Route path="/contact" element={<Contact/>}/> */}
-          <Route path="/admin-dashboard" element={<AdminPanel/>}/>
-          <Route path="/admin" element={<AdminLogin/>}/>
-          <Route path="/admin-orders" element={<AdminOrders/>}/>
-          <Route path="/admin-packers" element={<AdminPackers/>}/>
-          <Route path="/admin-movers" element={<AdminMov/>}/>
-          <Route path="/admin-drivers" element={<AdminDrivers/>}/>
-          <Route path="/admin-mover-req" element={<AdminMoverReq/>}/>
-         <Route path="/admin-view-complaints" element={<AdminViewComplaints/>}/>
-         <Route path="/admin-view-single-packer/:id" element={<AdminViewSinglePacker/>}/>
-         <Route path="/admin-view-single-mover/:id" element={<AdminViewSingleMover/>}/>
-         <Route path="/admin-view-single-driver/:id" element={<AdminViewSingleDriver/>}/>
-          <Route path="/packers-view-movers" element={<PackersHome/>}/>
-          <Route path="/packers-home" element={<PackersHomeMain/>}/>
-          <Route path="/packers-profile" element={<PackersProfile/>}/>
-          <Route path="/packers-edit-profile" element={<PackersEditProfile/>}/>
-          <Route path="/packers-orders" element={<PackersOrders/>}/>
-          <Route path="/packers-forgot-pass" element={<PackersForgotPass/>}/>
-          <Route path="/packers-track-order/:id" element={[<PackersNav/>,<PackerTrackOrder/>]}/>
-          <Route path="/single-packer-view/:id" element={<MvrDetailsForPkr/>}/>
-          <Route path="/mover_add_driver" element={<MoverAddDriver/>}/>
-          <Route path="/mover_view_drivers" element={<MoverViewAllDrivers/>}/>
-          <Route path="/mover_edit_drivers/:id" element={<MoverEditDriver/>}/>
-          <Route path="/driver_home" element={<DriverHome/>}/>
-          <Route path="/driver_about" element={[<DriverNav/>,<About/>]}/>
-          <Route path="/driver_services" element={[<DriverNav/>,<Services/>]}/>
-          <Route path="/driver-order-req" element={[<DriverNav/>,<DriverViewOrderReq/>]}/>
-          <Route path="/driver-view-orders" element={[<DriverNav/>,<DriverViewAcceptedOrders/>]}/>
-          <Route path="/driver-add_location/:id" element={[<DriverNav/>,<DriverAddLocation/>]}/>
-          <Route path="/movers-view-order-details/:id" element={[<MoversNav/>,<MoverViewAndTrackOrder/>]}/>
+          <Route path="/admin-dashboard" element={<AdminPanel />} />
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin-orders" element={<AdminOrders />} />
+          <Route path="/admin-packers" element={<AdminPackers />} />
+          <Route path="/admin-movers" element={<AdminMov />} />
+          <Route path="/admin-drivers" element={<AdminDrivers />} />
+          <Route path="/admin-mover-req" element={<AdminMoverReq />} />
+          <Route
+            path="/admin-view-complaints"
+            element={<AdminViewComplaints />}
+          />
+          <Route
+            path="/admin-view-single-packer/:id"
+            element={<AdminViewSinglePacker />}
+          />
+          <Route
+            path="/admin-view-single-mover/:id"
+            element={<AdminViewSingleMover />}
+          />
+          <Route
+            path="/admin-view-single-driver/:id"
+            element={<AdminViewSingleDriver />}
+          />
+          <Route path="/packers-view-movers" element={<PackersHome />} />
+          <Route path="/packers-home" element={<PackersHomeMain />} />
+          <Route path="/packers-profile" element={<PackersProfile />} />
+          <Route
+            path="/packers-edit-profile"
+            element={<PackersEditProfile />}
+          />
+          <Route path="/packers-orders" element={<PackersOrders />} />
+          <Route path="/packers-forgot-pass" element={<PackersForgotPass />} />
+          <Route
+            path="/packers-track-order/:id"
+            element={[<PackersNav />, <PackerTrackOrder />]}
+          />
+          <Route
+            path="/single-packer-view/:id"
+            element={<MvrDetailsForPkr />}
+          />
+          <Route path="/mover_add_driver" element={<MoverAddDriver />} />
+          <Route path="/mover_view_drivers" element={<MoverViewAllDrivers />} />
+          <Route path="/mover_edit_drivers/:id" element={<MoverEditDriver />} />
+          <Route path="/driver_home" element={<DriverHome />} />
+          <Route path="/driver_about" element={[<DriverNav />, <About />]} />
+          <Route
+            path="/driver_services"
+            element={[<DriverNav />, <Services />]}
+          />
+          <Route
+            path="/driver-order-req"
+            element={[<DriverNav />, <DriverViewOrderReq />]}
+          />
+          <Route
+            path="/driver-view-orders"
+            element={[<DriverNav />, <DriverViewAcceptedOrders />]}
+          />
+          <Route
+            path="/driver-add_location/:id"
+            element={[<DriverNav />, <DriverAddLocation />]}
+          />
+          <Route
+            path="/movers-view-order-details/:id"
+            element={[<MoversNav />, <MoverViewAndTrackOrder />]}
+          />
         </Routes>
       </div>
       <Footer />
@@ -127,35 +173,6 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -204,7 +221,6 @@ export default App;
 // import PackerAddComplaints from "./Components/PackerAddComplaints";
 // import AdminViewComplaints from "./Components/AdminViewComplaints";
 
-
 // function App() {
 //   return (
 //     <BrowserRouter basename='/projects/packers_and_Movers'>
@@ -228,7 +244,7 @@ export default App;
 //           <Route path="/movers-payments/:id" element={<MoversPatment/>}/>
 //           <Route path="/movers-view-orders" element={<MoversViewOrderReq/>}/>
 //           <Route path="/movers-order-req" element={<MoverViewOrderReq/>}/>
-         
+
 //           <Route path="/admin" element={<AdminLogin/>}/>
 //           <Route path="/admin-packers" element={<AdminPackers/>}/>
 //           <Route path="/admin-movers" element={<AdminMov/>}/>
@@ -258,20 +274,3 @@ export default App;
 // }
 
 // export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -180,7 +180,9 @@ function MoversReg() {
           navigate('/movers-details')
         }else if(res.data.status==401){
           toast.error(res.data.msg)
-        }
+        }else if(res.data.status==405){
+          toast.warning(res.data.msg)
+      }
         else{
           toast.error('Registration failed')
         }

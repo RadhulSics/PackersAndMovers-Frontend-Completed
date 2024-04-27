@@ -82,6 +82,9 @@ function MoversNav() {
             <Link to="/movers-view-complaints" className="nav-item nav-link ">
               Complaints
             </Link>
+            <Link to="/movers-view-rating" className="nav-item nav-link ">
+              Reviews
+            </Link>
             <Link to="/movers-profile" className="nav-item nav-link ">
               Profile
             </Link>

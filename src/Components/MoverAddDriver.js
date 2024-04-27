@@ -22,7 +22,10 @@ function MoverAddDriver() {
         if (response.data.status===200) {
             navigate('/mover_view_drivers')
             toast.success('Profile created')
-        }else{
+        }else if(response.data.status==405){
+            toast.warning(response.data.msg)
+        }
+        else{
             toast.error('Registration Failed')
 
         }

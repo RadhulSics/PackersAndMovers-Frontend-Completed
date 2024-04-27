@@ -188,7 +188,9 @@ function PackersReg() {
         if (response.data.status === 200) {
           navigate("/packers-login");
           toast.success("Profile created");
-        } else {
+        }else if(response.data.status==405){
+          toast.warning(response.data.msg)
+      } else {
           toast.error("Registration Failed");
         }
       })

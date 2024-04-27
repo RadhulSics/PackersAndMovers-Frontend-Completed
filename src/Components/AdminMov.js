@@ -131,7 +131,7 @@ function AdminMov() {
                     <th scope="col">E-mail</th>
                     <th scope="col">Reg No</th>
                     <th scope="col">Contact</th>
-                    <th scope="col">Rating</th>1
+                    <th scope="col">Rating</th>
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
