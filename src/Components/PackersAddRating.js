@@ -17,12 +17,22 @@ function PackersAddRating() {
     e.preventDefault();
     console.log(rating);
     console.log(review);
+
+    if (!rating.rating) { // Check if the rating value is empty
+      return toast.warning("Please add a rating");
+    }
+  
+    if (!review.review) { // Check if the review text is empty
+      return toast.warning("Please add a review");
+    }
+
     axiosInstance
       .post("/addReview", review)
       .then((res) => {
         console.log(res);
         if (res.status == 200) {
-          toast.success("Added Reviews");
+          toast.success("Added Successfully");
+          navigate(-1)
         } 
       })
       .catch((err) => {
@@ -34,7 +44,9 @@ function PackersAddRating() {
       .then((res) => {
         console.log(res);
         if (res.status == 200) {
-          toast.success("Rating");
+          // toast.success("Rating");
+          // navigate(-1)
+
         } 
       })
       .catch((err) => {
@@ -80,6 +92,7 @@ function PackersAddRating() {
                       placeholder="write your review"
                       style={{ height: "55px" }}
                       onChange={(e)=>{setreviews({...review,review:e.target.value})}}
+                      required
 
                     />
                   </div>
